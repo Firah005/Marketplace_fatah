@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+
+    <title>DDS FARM - Unggul & Berkualitas</title>
+
+    <style>
+      :root {
+        --primary-farm: #2d5a27;
+        --accent-farm: #aab95f;
+      }
+      body {
+        background-color: #f4f7f4;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .navbar {
+        border-bottom: 4px solid var(--accent-farm);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .effect-totop {
+        transform: translateY(0);
+        transition: 0.3s all ease;
+      }
+      .effect-totop:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+      }
+      .card {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .card-img-top {
+        height: 220px;
+        object-fit: cover;
+      }
+      .btn-primary {
+        background-color: var(--primary-farm);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-weight: 600;
+      }
+      .btn-primary:hover {
+        background-color: #1e3d1a;
+      }
+      .badge-category {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 10;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .form-label {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #444;
+      }
+      .form-control {
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+      .form-control:focus {
+        border-color: var(--accent-farm);
+        box-shadow: 0 0 0 0.25rem rgba(170, 185, 95, 0.25);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigasi -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="img/logo.jpeg" alt="Logo" class="rounded-circle bg-white me-2" style="height: 45px; border: 2px solid var(--accent-farm)" />
+          <span>DDS FARM<small style="font-size: 0.5em; display: block; color: var(--accent-farm)">UNGGUL DAN BERKUALITAS</small></span>
+        </a>
+
+        <div class="ms-auto d-flex align-items-center">
+          <button class="btn btn-warning position-relative fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#modalKeranjang">
+            <i class="bi bi-cart3 me-1"></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-uppercase">Marketplace Produk Unggulan</h2>
+        <p class="text-muted">Bibit Ayam KUB Asli, Sehat, dan Bergaransi</p>
+        <hr class="mx-auto" style="width: 60px; border-top: 5px solid var(--primary-farm); border-radius: 5px" />
+      </div>
+
+      <!-- Grid Produk -->
+      <div class="row g-4">
+        <!-- Item 1 -->
+        <div class="col-md-6 col-lg-4 effect-totop">
+          <div class="card h-100 shadow-sm">
+            <span class="badge bg-dark badge-category">Pejantan</span>
+            <img src="img/Ayam KUB Jantan img1.jpeg" class="card-img-top" alt="Ayam KUB Jantan" />
+            <div class="card-body d-flex flex-column text-center">
+              <p class="card-text text-danger fs-4 fw-bold mb-3">Rp 750.000 <small class="text-muted fs-6">/ Ekor</small></p>
+              <button class="btn btn-primary mt-auto w-100" onclick="tambahKeranjang('Ayam KUB Jantan', 750000)"><i class="bi bi-cart-plus me-2"></i>Tambah Ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="col-md-6 col-lg-4 effect-totop">
+          <div class="card h-100 shadow-sm">
+            <span class="badge bg-warning text-dark badge-category">Bibit DOC</span>
+            <img src="img/ayam DOC img2.jpeg" class="card-img-top" alt="Ayam DOC" />
+            <div class="card-body d-flex flex-column text-center">
+              <p class="card-text text-danger fs-4 fw-bold mb-3">Rp 12.000 <small class="text-muted fs-6">/ Ekor</small></p>
+              <button class="btn btn-primary mt-auto w-100" onclick="tambahKeranjang('Ayam KUB (DOC)', 12000)"><i class="bi bi-cart-plus me-2"></i>Tambah Ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="col-md-6 col-lg-4 effect-totop">
+          <div class="card h-100 shadow-sm">
+            <span class="badge bg-info badge-category">Telur Tetas</span>
+            <img src="img/Telur tetas img3.jpeg" class="card-img-top" alt="Telur Tetas" />
+            <div class="card-body d-flex flex-column text-center">
+              <p class="card-text text-danger fs-4 fw-bold mb-3">Rp 3.500 <small class="text-muted fs-6">/ Butir</small></p>
+              <button class="btn btn-primary mt-auto w-100" onclick="tambahKeranjang('Telur Tetas', 3500)"><i class="bi bi-cart-plus me-2"></i>Tambah Ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="col-md-6 col-lg-4 effect-totop">
+          <div class="card h-100 shadow-sm">
+            <span class="badge bg-dark badge-category">Indukan</span>
+            <img src="img/ayam KUB betina img4.jpeg" class="card-img-top" alt="Ayam KUB Betina" />
+            <div class="card-body d-flex flex-column text-center">
+              <p class="card-text text-danger fs-4 fw-bold mb-3">Rp 55.000 <small class="text-muted fs-6">/ Ekor</small></p>
+              <button class="btn btn-primary mt-auto w-100" onclick="tambahKeranjang('Ayam KUB Betina', 55000)"><i class="bi bi-cart-plus me-2"></i>Tambah Ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="col-md-6 col-lg-4 effect-totop">
+          <div class="card h-100 shadow-sm">
+            <span class="badge bg-secondary badge-category">Ayam KUB (2 Bulan)</span>
+            <img src="img/Ayam KUB 2 bulan img5.jpeg" class="card-img-top" alt="Ayam 2 Bulan" />
+            <div class="card-body d-flex flex-column text-center">
+              <p class="card-text text-danger fs-4 fw-bold mb-3">Rp 45.000 <small class="text-muted fs-6">/ Ekor</small></p>
+              <button class="btn btn-primary mt-auto w-100" onclick="tambahKeranjang('Ayam KUB Usia 2 Bulan', 45000)"><i class="bi bi-cart-plus me-2"></i>Tambah Ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="col-md-6 col-lg-4 effect-totop">
+          <div class="card h-100 shadow-sm">
+            <span class="badge bg-secondary badge-category">Ayam KUB (4 Bulan)</span>
+            <img src="img/Ayam KUB 4 bulan img6.jpeg" class="card-img-top" alt="Ayam 4 Bulan" />
+            <div class="card-body d-flex flex-column text-center">
+              <p class="card-text text-danger fs-4 fw-bold mb-3">Rp 65.000 <small class="text-muted fs-6">/ Ekor</small></p>
+              <button class="btn btn-primary mt-auto w-100" onclick="tambahKeranjang('Ayam KUB Usia 4 Bulan', 65000)"><i class="bi bi-cart-plus me-2"></i>Tambah Ke Keranjang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Keranjang -->
+    <div class="modal fade" id="modalKeranjang" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" style="border-radius: 20px; border: none">
+          <div class="modal-header bg-dark text-white" style="border-radius: 20px 20px 0 0">
+            <h5 class="modal-title"><i class="bi bi-bag-check-fill me-2 text-warning"></i>Detail Pesanan Anda</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row">
+              <!-- Sisi Kiri: Daftar Produk -->
+              <div class="col-lg-7 border-end">
+                <h6 class="fw-bold mb-3"><i class="bi bi-list-ul me-2"></i>Item di Keranjang</h6>
+                <div id="list-keranjang" style="max-height: 300px; overflow-y: auto" class="mb-3">
+                  <p class="text-center text-muted py-4">Keranjang masih kosong</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
+                  <span class="fw-bold">Total Pembayaran:</span>
+                  <span id="total-harga" class="h5 mb-0 text-danger fw-bold">Rp 0</span>
+                </div>
+              </div>
+
+              <!-- Sisi Kanan: Form Pembeli -->
+              <div class="col-lg-5 mt-4 mt-lg-0">
+                <h6 class="fw-bold mb-3"><i class="bi bi-person-lines-fill me-2"></i>Data Pengiriman</h6>
+                <form id="formPembeli">
+                  <div class="mb-2">
+                    <label class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="pembeli-nama" placeholder="Contoh: Budi Santoso" required />
+                  </div>
+                  <div class="mb-2">
+                    <label class="form-label">No. WhatsApp</label>
+                    <input type="number" class="form-control" id="pembeli-wa" placeholder="0812xxxx" required />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Alamat Pengiriman</label>
+                    <textarea class="form-control" id="pembeli-alamat" rows="3" placeholder="Nama Jalan, Desa, Kec, Kab..." required></textarea>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light" style="border-radius: 0 0 20px 20px">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-success px-4" onclick="checkoutWA()"><i class="bi bi-whatsapp me-2"></i>Kirim Pesanan Sekarang</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+      <p class="mb-0">&copy; 2024 DDS FARM. Solusi Peternakan Ayam KUB Unggul.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      let keranjang = [];
+
+      function tambahKeranjang(nama, harga) {
+        const index = keranjang.findIndex((item) => item.nama === nama);
+        if (index !== -1) {
+          keranjang[index].jumlah++;
+        } else {
+          keranjang.push({ nama: nama, harga: harga, jumlah: 1 });
+        }
+        updateUI();
+      }
+
+      function ubahJumlah(index, aksi) {
+        if (aksi === 'tambah') {
+          keranjang[index].jumlah++;
+        } else if (aksi === 'kurang') {
+          keranjang[index].jumlah--;
+          if (keranjang[index].jumlah < 1) {
+            hapusItem(index);
+            return;
+          }
+        }
+        updateUI();
+      }
+
+      function hapusItem(index) {
+        keranjang.splice(index, 1);
+        updateUI();
+      }
+
+      function updateUI() {
+        const cartCount = document.getElementById('cart-count');
+        const listKeranjang = document.getElementById('list-keranjang');
+        const totalHargaElement = document.getElementById('total-harga');
+
+        const totalItem = keranjang.reduce((acc, item) => acc + item.jumlah, 0);
+        cartCount.innerText = totalItem;
+
+        if (keranjang.length === 0) {
+          listKeranjang.innerHTML = '<p class="text-center text-muted py-4">Keranjang masih kosong</p>';
+          totalHargaElement.innerText = 'Rp 0';
+          return;
+        }
+
+        listKeranjang.innerHTML = '';
+        let totalHarga = 0;
+
+        keranjang.forEach((item, index) => {
+          const subtotal = item.harga * item.jumlah;
+          totalHarga += subtotal;
+          listKeranjang.innerHTML += `
+            <div class="d-flex justify-content-between align-items-center mb-3 bg-white p-2 rounded shadow-sm border">
+              <div style="flex: 1;">
+                <h6 class="mb-0 fw-bold small">${item.nama}</h6>
+                <small class="text-muted">Rp ${item.harga.toLocaleString()} x ${item.jumlah}</small>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="btn-group btn-group-sm me-2">
+                  <button class="btn btn-outline-success" onclick="ubahJumlah(${index}, 'kurang')">-</button>
+                  <button class="btn btn-outline-success" disabled style="width: 35px;">${item.jumlah}</button>
+                  <button class="btn btn-outline-success" onclick="ubahJumlah(${index}, 'tambah')">+</button>
+                </div>
+                <button class="btn btn-sm btn-link text-danger" onclick="hapusItem(${index})"><i class="bi bi-trash"></i></button>
+              </div>
+            </div>
+          `;
+        });
+
+        totalHargaElement.innerText = `Rp ${totalHarga.toLocaleString()}`;
+      }
+
+      function checkoutWA() {
+        // Validasi Keranjang
+        if (keranjang.length === 0) {
+          alert('Ups! Keranjang Anda masih kosong.');
+          return;
+        }
+
+        // Ambil Data Pembeli
+        const nama = document.getElementById('pembeli-nama').value;
+        const wa = document.getElementById('pembeli-wa').value;
+        const alamat = document.getElementById('pembeli-alamat').value;
+
+        // Validasi Form
+        if (!nama || !wa || !alamat) {
+          alert('Mohon lengkapi data pengiriman Anda!');
+          return;
+        }
+
+        const nomorTujuan = '628123456789'; // <--- GANTI INI DENGAN NOMOR ANDA
+        let total = 0;
+        let pesan = `*PESANAN BARU - DDS FARM*\n`;
+        pesan += `------------------------------------------\n`;
+        pesan += `*DATA PEMBELI*\n`;
+        pesan += `👤 Nama: ${nama}\n`;
+        pesan += `📱 No. HP: ${wa}\n`;
+        pesan += `📍 Alamat: ${alamat}\n`;
+        pesan += `------------------------------------------\n`;
+        pesan += `*DAFTAR PESANAN*\n`;
+
+        keranjang.forEach((item, index) => {
+          const subtotal = item.harga * item.jumlah;
+          total += subtotal;
+          pesan += `- ${item.nama} (${item.jumlah}x) = Rp ${subtotal.toLocaleString()}\n`;
+        });
+
+        pesan += `------------------------------------------\n`;
+        pesan += `*TOTAL PEMBAYARAN: Rp ${total.toLocaleString()}*\n`;
+        pesan += `------------------------------------------\n`;
+        pesan += `Mohon segera diproses ya, terima kasih!`;
+
+        const linkWA = `https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}`;
+        window.open(linkWA, '_blank');
+      }
+    </script>
+  </body>
+</html>
