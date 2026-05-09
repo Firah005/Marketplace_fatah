@@ -13,64 +13,89 @@
         --primary-farm: #2d5a27;
         --accent-farm: #aab95f;
       }
+
+      /* GRADASI UNIK: SUNSET HARVEST */
       body {
-        background-color: #f4f7f4;
+        /* Perpaduan warna tanah, oranye matahari terbenam, dan hijau zaitun */
+        background: linear-gradient(135deg, #2d5a27 0%, #6d8c54 30%, #d4a373 70%, #faedcd 100%);
+        background-attachment: fixed;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        margin: 0;
       }
+
       .navbar {
         border-bottom: 4px solid var(--accent-farm);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
       }
+
       .effect-totop {
         transform: translateY(0);
-        transition: 0.3s all ease;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
+
       .effect-totop:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+        transform: translateY(-15px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
       }
+
+      /* KARTU DENGAN EFEK KACA YANG LEBIH KUAT */
       .card {
-        border: none;
-        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 25px;
         overflow: hidden;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
+
       .card-img-top {
         height: 220px;
         object-fit: cover;
+        border-bottom: 5px solid var(--accent-farm);
       }
+
       .btn-primary {
         background-color: var(--primary-farm);
         border: none;
-        border-radius: 10px;
-        padding: 10px;
-        font-weight: 600;
+        border-radius: 12px;
+        padding: 12px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        transition: 0.3s;
       }
+
       .btn-primary:hover {
         background-color: #1e3d1a;
+        transform: scale(1.02);
       }
+
       .badge-category {
         position: absolute;
         top: 15px;
         left: 15px;
         z-index: 10;
-        padding: 8px 12px;
-        border-radius: 8px;
-        font-size: 0.75rem;
+        padding: 10px 15px;
+        border-radius: 12px;
+        font-size: 0.7rem;
+        font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
-      .form-label {
-        font-weight: 600;
-        font-size: 0.9rem;
-        color: #444;
+
+      /* PENYESUAIAN TEKS AGAR KONTRAS DENGAN GRADASI */
+      h2.fw-bold {
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
+      p.text-muted-custom {
+        color: #f8f9fa;
+        font-weight: 500;
+      }
+
       .form-control {
-        border-radius: 8px;
-        border: 1px solid #ddd;
-      }
-      .form-control:focus {
-        border-color: var(--accent-farm);
-        box-shadow: 0 0 0 0.25rem rgba(170, 185, 95, 0.25);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.9);
       }
     </style>
   </head>
@@ -96,15 +121,15 @@
     <div class="container py-5">
       <div class="text-center mb-5">
         <h2 class="fw-bold text-uppercase">Marketplace Produk Unggulan</h2>
-        <p class="text-muted">Bibit Ayam KUB Asli, Sehat, dan Bergaransi</p>
-        <hr class="mx-auto" style="width: 60px; border-top: 5px solid var(--primary-farm); border-radius: 5px" />
+        <p class="text-muted-custom">Bibit Ayam KUB Asli, Sehat, dan Bergaransi</p>
+        <hr class="mx-auto" style="width: 80px; border-top: 5px solid #ffffff; border-radius: 5px; opacity: 1" />
       </div>
 
       <!-- Grid Produk -->
       <div class="row g-4">
         <!-- Item 1 -->
         <div class="col-md-6 col-lg-4 effect-totop">
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100">
             <span class="badge bg-dark badge-category">Pejantan</span>
             <img src="img/Ayam KUB Jantan img1.jpeg" class="card-img-top" alt="Ayam KUB Jantan" />
             <div class="card-body d-flex flex-column text-center">
@@ -116,7 +141,7 @@
 
         <!-- Item 2 -->
         <div class="col-md-6 col-lg-4 effect-totop">
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100">
             <span class="badge bg-warning text-dark badge-category">Bibit DOC</span>
             <img src="img/ayam DOC img2.jpeg" class="card-img-top" alt="Ayam DOC" />
             <div class="card-body d-flex flex-column text-center">
@@ -128,7 +153,7 @@
 
         <!-- Item 3 -->
         <div class="col-md-6 col-lg-4 effect-totop">
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100">
             <span class="badge bg-info badge-category">Telur Tetas</span>
             <img src="img/Telur tetas img3.jpeg" class="card-img-top" alt="Telur Tetas" />
             <div class="card-body d-flex flex-column text-center">
@@ -140,7 +165,7 @@
 
         <!-- Item 4 -->
         <div class="col-md-6 col-lg-4 effect-totop">
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100">
             <span class="badge bg-dark badge-category">Indukan</span>
             <img src="img/ayam KUB betina img4.jpeg" class="card-img-top" alt="Ayam KUB Betina" />
             <div class="card-body d-flex flex-column text-center">
@@ -152,7 +177,7 @@
 
         <!-- Item 5 -->
         <div class="col-md-6 col-lg-4 effect-totop">
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100">
             <span class="badge bg-secondary badge-category">Ayam KUB (2 Bulan)</span>
             <img src="img/Ayam KUB 2 bulan img5.jpeg" class="card-img-top" alt="Ayam 2 Bulan" />
             <div class="card-body d-flex flex-column text-center">
@@ -164,7 +189,7 @@
 
         <!-- Item 6 -->
         <div class="col-md-6 col-lg-4 effect-totop">
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100">
             <span class="badge bg-secondary badge-category">Ayam KUB (4 Bulan)</span>
             <img src="img/Ayam KUB 4 bulan img6.jpeg" class="card-img-top" alt="Ayam 4 Bulan" />
             <div class="card-body d-flex flex-column text-center">
@@ -186,7 +211,6 @@
           </div>
           <div class="modal-body p-4">
             <div class="row">
-              <!-- Sisi Kiri: Daftar Produk -->
               <div class="col-lg-7 border-end">
                 <h6 class="fw-bold mb-3"><i class="bi bi-list-ul me-2"></i>Item di Keranjang</h6>
                 <div id="list-keranjang" style="max-height: 300px; overflow-y: auto" class="mb-3">
@@ -198,7 +222,6 @@
                 </div>
               </div>
 
-              <!-- Sisi Kanan: Form Pembeli -->
               <div class="col-lg-5 mt-4 mt-lg-0">
                 <h6 class="fw-bold mb-3"><i class="bi bi-person-lines-fill me-2"></i>Data Pengiriman</h6>
                 <form id="formPembeli">
@@ -227,7 +250,7 @@
     </div>
 
     <footer class="bg-dark text-white text-center py-4 mt-5">
-      <p class="mb-0">&copy; 2024 DDS FARM. Solusi Peternakan Ayam KUB Unggul.</p>
+      <p class="mb-0">&copy; 2026 DDS FARM. Solusi Peternakan Ayam KUB Unggul.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -305,24 +328,21 @@
       }
 
       function checkoutWA() {
-        // Validasi Keranjang
         if (keranjang.length === 0) {
           alert('Ups! Keranjang Anda masih kosong.');
           return;
         }
 
-        // Ambil Data Pembeli
         const nama = document.getElementById('pembeli-nama').value;
         const wa = document.getElementById('pembeli-wa').value;
         const alamat = document.getElementById('pembeli-alamat').value;
 
-        // Validasi Form
         if (!nama || !wa || !alamat) {
           alert('Mohon lengkapi data pengiriman Anda!');
           return;
         }
 
-        const nomorTujuan = '628123456789'; // <--- GANTI INI DENGAN NOMOR ANDA
+        const nomorTujuan = '628123456789';
         let total = 0;
         let pesan = `*PESANAN BARU - DDS FARM*\n`;
         pesan += `------------------------------------------\n`;
